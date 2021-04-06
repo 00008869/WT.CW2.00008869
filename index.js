@@ -7,8 +7,7 @@ const app = express();
 const bodyParser = require("body-parser");
 
 const employees = require("./routes/employees");
-const comments = require("./routes/comments");
-const getCollection = require("./utils").getCollection;
+const getCollection = require("./public/javascripts/utils").getCollection;
 
 const database = "database/employees.json"
 

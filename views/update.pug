@@ -1,0 +1,36 @@
+extends layout.pug
+
+block content
+  main.all-notes
+    form(method="POST")
+
+      label.label Name
+      input(class="note-input" name="name" value=`${ note.name }`)
+
+      label.label Surname
+      input(class="note-input" name="surname" value=`${ note.surname }`)
+
+      label.label Date of birth
+      input(class="note-input" name="dob" value=`${ note.dob }`)
+
+      label.label Job position
+      input(class="note-input" name="position" value=`${ note.position }`)
+
+      label.label Email adress
+      input(class="note-input" name="email" value=`${ note.email }`)
+
+      label.label Mobile phone
+      input(class="note-input" name="mobile" value=`${ note.mobile }`)
+
+      label.label Current job status
+      br
+      input(type="radio",name="status",value="active",checked=true)
+      label Working
+      input(type="radio",name="status",value="inactive",checked=false)
+      label Fired/Retired
+      br
+
+
+      label.label Brief information
+      textarea(class="note-input" name="body" rows="5")
+      button.create-note-btn Save information
