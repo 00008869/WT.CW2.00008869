@@ -1,36 +1,34 @@
 extends layout.pug
 
 block content
-  main.all-notes
-    form(method="POST")
-
-      label.label Name
-      input(class="note-input" name="name" value=`${ note.name }`)
-
-      label.label Surname
-      input(class="note-input" name="surname" value=`${ note.surname }`)
-
-      label.label Date of birth
-      input(class="note-input" name="dob" value=`${ note.dob }`)
-
-      label.label Job position
-      input(class="note-input" name="position" value=`${ note.position }`)
-
-      label.label Email adress
-      input(class="note-input" name="email" value=`${ note.email }`)
-
-      label.label Mobile phone
-      input(class="note-input" name="mobile" value=`${ note.mobile }`)
-
-      label.label Current job status
-      br
-      input(type="radio",name="status",value="active",checked=true)
-      label Working
-      input(type="radio",name="status",value="inactive",checked=false)
-      label Fired/Retired
-      br
-
-
-      label.label Brief information
-      textarea(class="note-input" name="body" rows="5")
-      button.create-note-btn Save information
+  .container
+    .title Employee's information
+    .content
+      form(method="POST")
+        .user-details
+          .input-box
+            span.details Name
+            input(type='text' placeholder='Enter your name' required='' name="name" value=`${ employee.name }`)
+          .input-box
+            span.details Surname
+            input(type='text' placeholder='Enter your surname' required='' name="surname" value=`${ employee.surname }`)
+          .input-box
+            span.details Email
+            input(type='text' placeholder='Enter your email' required='' name="email" value=`${ employee.email }`)
+          .input-box
+            span.details Phone Number
+            input(type='text' placeholder='Enter your number' required='' name="mobile" value=`${ employee.mobile }`)
+          .input-box
+            span.details Date of Birth
+            input(type='date' placeholder='Enter your date of birth' required='' name="dob" data-date-inline-picker='true' value=`${ employee.dob }`)
+          .input-box
+            span.details Position in the company
+            input(type='text' placeholder='Position in the company' required='' name="position" value=`${ employee.position }`)
+          span.details Status of an employee
+          select#status(name='status')
+            option(value='Active') Active
+            option(value='Fired') Fired
+            option(value='In vacation') In vacation
+            option(value='Retired') Retired
+        .button
+          input(type='submit' value='Update')

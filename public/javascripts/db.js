@@ -44,12 +44,11 @@ class DbContext {
         id: generateID(),
         name: newRecord.name,
         surname: newRecord.surname,
-        dob: newRecord.dob,
-        position: newRecord.position,
         email: newRecord.email,
         mobile: newRecord.mobile,
+        dob: newRecord.dob,
+        position: newRecord.position,
         status: newRecord.status,
-        archive: false,
       });
 
       fs.writeFile(this.collection, JSON.stringify(records), err => {

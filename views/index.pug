@@ -1,8 +1,14 @@
 extends layout.pug
 
 block content
-  main.intro
-    p This is very simple note taking app
-    p You can create notes, delete them, archive notes
-    p Supports markdown
-    a(href="employees/create-employee" class="create-note-btn") Create note
+  main.l-main
+    section#home.home.bd-grid
+      .home__data
+        h1#homeTitle.home__title
+          | An application to work with employees of 
+          br
+          span.home__title-color a fictional
+          |  organization
+        a.button-main(href='/list_employees') List of employees
+      .home__img
+        img(src='/images/perfil.png' alt='')

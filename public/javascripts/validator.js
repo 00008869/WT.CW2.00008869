@@ -1,6 +1,6 @@
 class Validator {
   isValid(data) {
-    if (data.name.trim() === "" || data.surname.trim() === "" || data.body.trim() === "") {
+    if (data.name === "" || data.surname === "" || data.body === "") {
       return false;
     } else {
       return true;

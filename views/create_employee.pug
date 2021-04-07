@@ -1,46 +1,35 @@
-doctype html
-head
-  meta(charset='UTF-8')
-  // -<title> Responsive Registration Form | CodingLab </title>-
-  link(rel='stylesheet' href='/styles/style.css')
-  meta(name='viewport' content='width=device-width, initial-scale=1.0')
-.container
-  .title Registration
-  .content
-    form(action='#')
-      .user-details
-        .input-box
-          span.details Full Name
-          input(type='text' placeholder='Enter your name' required='')
-        .input-box
-          span.details Username
-          input(type='text' placeholder='Enter your username' required='')
-        .input-box
-          span.details Email
-          input(type='text' placeholder='Enter your email' required='')
-        .input-box
-          span.details Phone Number
-          input(type='text' placeholder='Enter your number' required='')
-        .input-box
-          span.details Password
-          input(type='text' placeholder='Enter your password' required='')
-        .input-box
-          span.details Confirm Password
-          input(type='text' placeholder='Confirm your password' required='')
-      .gender-details
-        input#dot-1(type='radio' name='gender')
-        input#dot-2(type='radio' name='gender')
-        input#dot-3(type='radio' name='gender')
-        span.gender-title Gender
-        .category
-          label(for='dot-1')
-            span.dot.one
-            span.gender Male
-          label(for='dot-2')
-            span.dot.two
-            span.gender Female
-          label(for='dot-3')
-            span.dot.three
-            span.gender Prefer not to say
-      .button
-        input(type='submit' value='Register')
+extends layout.pug
+
+block content
+  .container
+    .title Employee's information
+    .content
+      form(method="POST")
+        .user-details
+          .input-box
+            span.details Name
+            input(placeholder='Enter your name' required='' name="name")
+          .input-box
+            span.details Surname
+            input(placeholder='Enter your surname' required='' name="surname")
+          .input-box
+            span.details Email
+            input(type='text' placeholder='Enter your email' required='' name="email")
+          .input-box
+            span.details Phone Number
+            input(type='text' placeholder='Enter your number' required='' name="mobile")
+          .input-box
+            span.details Date of Birth
+            input.mask-date(type='date' placeholder='MM/YY' required='' name="dob" data-date-inline-picker='true')
+          .input-box
+            span.details Position in the company
+            input(type='text' placeholder='Position in the company' required='' name="position")
+          span.details Status of an employee
+          select#status(name='status')
+            option(value='Active') Active
+            option(value='Fired') Fired
+            option(value='In vacation') In vacation
+            option(value='Retired') Retired
+
+        .button
+          input(type='submit' value='Register')

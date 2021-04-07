@@ -1,13 +1,20 @@
 mixin link(href, name)
   a(href=href)&attributes(attributes)= name
 
-header.navbar
-  h1.logo 
-    a(href="/") HR application
-
-  nav.nav
-    ul.nav-items
-      li.nav-item 
-        +link('/notes', 'All applicants')(class="nav-link")
-      li.nav-item 
-        +link('/archive', 'Archive')(class="nav-link")
+header.l-header
+  nav.nav.bd-grid
+    div
+      a.nav__logo(href='/') 00008869
+    #nav-menu.nav__menu
+      ul.nav__list
+        li.nav__item
+          a.nav__link(href='/') Home
+        li.nav__item
+          a.nav__link(href='../list_employees') All employees
+        li.nav__item
+          a.nav__link(href='../create-employee') Add employee
+        li.nav__item
+          a.nav__link(href='/api/v1/employees') RestAPI
+    #nav-toggle.nav__toggle
+      img(src='/images/menuIcon.png')
+  script(src='/javascripts/menu.js')

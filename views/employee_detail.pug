@@ -1,0 +1,27 @@
+extends layout.pug
+
+block content
+  .container
+    .title Employee's information
+    .content
+      .name 
+      p.info-label.top-lable Employee's name
+      h2.info-name= employee.name
+    .surname
+      p.info-label Employee's surname
+      h2.info-surname= employee.surname
+    .dob
+      p.info-label Date of birth
+      h2.info-name= employee.dob
+    .jobposition
+      p.info-label Job position
+      h2.info-surname= employee.position
+    .email
+      p.info-label Email adress
+      h2.info-name= employee.email
+    .phone
+      p.info-label Phone number
+      h2.info-surname= employee.mobile
+    .status
+      p.info-label Status of employee
+      h2.info-surname= employee.status

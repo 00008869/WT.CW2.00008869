@@ -9,7 +9,7 @@ const bodyParser = require("body-parser");
 const employees = require("./routes/employees");
 const getCollection = require("./public/javascripts/utils").getCollection;
 
-const database = "database/employees.json"
+const db = "./database/employees.json"
 
 app.use(express.static('public'));
 
@@ -18,7 +18,7 @@ app.use(bodyParser.json());
 
 app.set("view engine", "pug");
 
-app.use("/employees", employees);
+app.use("/", employees);
 
 app.get("/", (req, res) => {
   res.render("index", { title: "Employees", message: "Application for employees managment" });
